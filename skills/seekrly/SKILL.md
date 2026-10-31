@@ -33,7 +33,7 @@ exactly what it will be and ask them to confirm or change it. Call the tool only
 after a clear yes. This covers new applications, contacts, interviews,
 follow-ups, notes and resumes, edits to any of them, and every email.
 
-1. **Show the full content**, not a summary. Show every field you'll pass, in
+1. **Show the full content**, not a summary. Show every field you'll send, in
    words (dates as "Tue, 13 Oct, 10:00 am IST", not ISO), and the complete
    text of any message or note. For example:
 
@@ -120,7 +120,7 @@ or in **Seekrly → Settings → Security → Connected apps**. Don't retry the 
 
 - Each tool returns a short text summary plus `structuredContent` (its shape is in
   the tool's output schema). Use the structured fields for ids and details.
-- Lists are paged: `total` is the full count; pass `offset` for more.
+- Lists are paged: `total` is the full count; send `offset` for more.
 - Emails are sent in the background: `send_email` and `send_follow_up` return
   `sending: true`. Say it's being sent, not that it was delivered; the follow-up
   then shows Sent, or Failed with `sendError`. `send_email` with `sendAt`

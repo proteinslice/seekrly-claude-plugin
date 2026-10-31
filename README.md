@@ -57,8 +57,11 @@ need a Seekrly account: [seekrly.com](https://seekrly.com).
 The plugin itself runs no code on your computer. It only points Claude at the
 Seekrly server.
 
-Privacy policy: [seekrly.com/privacy](https://seekrly.com/privacy) · Terms:
-[seekrly.com/terms](https://seekrly.com/terms) · Docs:
-[seekrly.com/docs/mcp](https://seekrly.com/docs/mcp) · Support:
-[connect@seekrly.com](mailto:connect@seekrly.com)
+## Links
+
+- Privacy policy: [seekrly.com/privacy](https://seekrly.com/privacy)
+- Terms of service: [seekrly.com/terms](https://seekrly.com/terms)
+- Documentation: [seekrly.com/docs/mcp](https://seekrly.com/docs/mcp)
+- Support: [seekrly.com/contact](https://seekrly.com/contact) or
+  [connect@seekrly.com](mailto:connect@seekrly.com)
 
