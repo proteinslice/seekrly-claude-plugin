@@ -8,6 +8,7 @@
     "url": "https://seekrly.com"
   },
   "homepage": "https://seekrly.com/docs/mcp",
+  "repository": "https://github.com/proteinslice/seekrly-claude-plugin",
   "license": "LicenseRef-Proprietary",
   "privacyPolicyUrl": "https://seekrly.com/privacy",
   "icon": "./.claude-plugin/icon.png",

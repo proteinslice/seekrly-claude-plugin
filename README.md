@@ -30,7 +30,7 @@ tracker", "Tailor my resume for this job".
 In Claude Code:
 
 ```
-/plugin marketplace add <owner>/<repo>
+/plugin marketplace add proteinslice/seekrly-claude-plugin
 /plugin install seekrly@seekrly
 ```
 
@@ -62,21 +62,3 @@ Privacy policy: [seekrly.com/privacy](https://seekrly.com/privacy) · Terms:
 [seekrly.com/docs/mcp](https://seekrly.com/docs/mcp) · Support:
 [connect@seekrly.com](mailto:connect@seekrly.com)
 
-## For maintainers
-
-```
-.claude-plugin/plugin.json        manifest (name, version, icon, privacy URL)
-.claude-plugin/marketplace.json   lists this plugin at "./" so the repo is installable
-.mcp.json                         the MCP server (http, https://seekrly.com/mcp)
-skills/                           copied from ../chatgpt-plugin/skills; don't edit here
-```
-
-- Edit skills in `../chatgpt-plugin/skills`, then copy them here:
-  `rm -rf skills && cp -R ../chatgpt-plugin/skills skills`. Check they match
-  with `diff -r skills ../chatgpt-plugin/skills`.
-- Check before publishing: `claude plugin validate . --profile directory`.
-- Test locally: `claude --plugin-dir .`, then `/mcp` → `seekrly` → sign in.
-  Claude Code signs in through a callback on `localhost`; check this works
-  against production before publishing.
-- Bump `version` in `.claude-plugin/plugin.json` for every release, together
-  with `../chatgpt-plugin/plugin.json`.
