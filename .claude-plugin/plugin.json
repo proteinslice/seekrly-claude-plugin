@@ -1,0 +1,22 @@
+{
+  "name": "seekrly",
+  "version": "1.2.1",
+  "description": "Seekrly is your career command center: land the next role and keep growing. Manage applications, recruiter relationships, interviews and follow-ups, build tailored ATS-ready resumes and keep a career profile that grows with you.",
+  "author": {
+    "name": "Seekrly",
+    "email": "connect@seekrly.com",
+    "url": "https://seekrly.com"
+  },
+  "homepage": "https://seekrly.com/docs/mcp",
+  "license": "LicenseRef-Proprietary",
+  "privacyPolicyUrl": "https://seekrly.com/privacy",
+  "icon": "./.claude-plugin/icon.png",
+  "keywords": [
+    "job-search",
+    "career",
+    "applications",
+    "resumes",
+    "interviews",
+    "recruiters"
+  ]
+}

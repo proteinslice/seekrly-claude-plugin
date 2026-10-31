@@ -1,0 +1,16 @@
+{
+  "name": "seekrly",
+  "owner": {
+    "name": "Seekrly",
+    "email": "connect@seekrly.com"
+  },
+  "description": "Seekrly's plugin for Claude: run your job search with your Seekrly account.",
+  "plugins": [
+    {
+      "name": "seekrly",
+      "source": "./",
+      "description": "Run your job search from Claude: track applications, review what's due, tailor resumes, email recruiters and prepare for interviews.",
+      "category": "productivity"
+    }
+  ]
+}
