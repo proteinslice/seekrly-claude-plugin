@@ -1,7 +1,7 @@
 # Seekrly tools
 
-"Confirm" = two-step: the first call returns a preview and `confirmationToken`; repeat
-with the token only after the user agrees. Every tool also needs `account:read`
+"Confirm" = runs as soon as it's called: show the user what it will do and ask once
+before the call. Every tool also needs `account:read`
 (always granted).
 
 ## Account, profile and search

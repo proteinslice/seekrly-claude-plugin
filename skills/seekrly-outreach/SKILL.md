@@ -31,13 +31,13 @@ account and **can't be unsent** - always draft first and get a clear yes.
   body, attachment and sender. Ask "Send this, or change something?" Revise and
   show it again until they approve. Never send a draft the user hasn't seen.
 
-## Sending (two-step)
+## Sending
 
 1. `send_email` with `contactId` **or** `email`, `subject`, `body`, optional
    `resumeId` (from `list_resumes`) and `sender` (auto/gmail/smtp).
-2. The first call returns a preview + `confirmationToken`. Show it in full:
-   recipient, subject, the whole body and the attachment. Ask "Send it?"
-3. Only on a clear yes, repeat the identical call with the token. The result is
+2. Call it only after the user approved the draft above; it sends right away, so
+   don't ask a second time.
+3. The result is
    `sending: true` with a `followUpId`: the email goes out within seconds. Say
    "Sending to …", not "Sent". If the user asks whether it went out, check
    `list_follow_ups` for that contact: Sent, or Failed with `sendError`. If
@@ -45,7 +45,7 @@ account and **can't be unsent** - always draft first and get a clear yes.
 4. Offer to plan a follow-up (below).
 
 To send it later instead ("send it Monday at 9"), add `sendAt` to the same
-two-step call: a date and time with the user's timezone offset (ask for the
+call: a date and time with the user's timezone offset (ask for the
 time if they didn't give one). It's saved as a follow-up that sends itself
 then (`sending: false`, `sendAt`, `followUpId`); say "Scheduled for …".
 `update_follow_up` reschedules it, or cancels it with `scheduledSend: false`.
@@ -64,8 +64,8 @@ to send it now (the same call without `sendAt`).
 - By default a follow-up is a reminder and nothing is sent. Only when the user
   asks for the email to go out by itself, pass `scheduledSend: true` on an Email
   follow-up with a time in `scheduledDate`: Seekrly sends it from their
-  Gmail/SMTP then (right away if the time has passed). It returns a preview
-  first; confirm with the user, then call again with the token. Automatic
+  Gmail/SMTP then (right away if the time has passed). Confirm the
+  draft and time with the user once before the call. Automatic
   sending is a paid feature (Pro and up) with a daily limit: on Free the
   follow-up is saved as a normal reminder (`send.state` `not_in_plan`) - tell
   the user they'll need to send it themselves, or upgrade. Plain reminders work

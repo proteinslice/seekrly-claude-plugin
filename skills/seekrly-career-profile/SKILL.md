@@ -19,7 +19,7 @@ autofill and job matching, so only save facts the user confirmed.
 "Needs visa sponsorship for the US"). Follow them when you write for the user.
 Each project has `links` (`{ name, url }`, e.g. "Live", "GitHub"), not one `url`.
 
-## Updating (two-step)
+## Updating
 
 1. **Always read first** with `get_career_profile`.
 2. Build the change with the same field names:
@@ -33,10 +33,10 @@ Each project has `links` (`{ name, url }`, e.g. "Live", "GitHub"), not one `url`
      `work` list: existing entries plus the new one. Never send a partial list
      unless the user wants entries removed.
 3. Show the change in the chat first (each field or section, before → after)
-   and ask "Update it, or change something?"
-4. After a yes, call `update_career_profile` without a token: you get a before/after preview and
-   a warning (it flags sections that would lose entries). Show it to the user.
-5. Only if they agree, repeat the identical call with `confirmationToken`.
+   and ask "Update it, or change something?" Say plainly if a section will lose
+   entries: removed entries can't be restored.
+4. After a yes, call `update_career_profile` once. It saves right away; don't ask
+   again.
 
 Not editable here: `basics.name`, `basics.email`, the photo, gender and date of
 birth - the user changes those on the Seekrly Profile page.
@@ -44,7 +44,7 @@ birth - the user changes those on the Seekrly Profile page.
 ## Filling the profile from a resume or details
 
 If the user just tells you the details, map them to the sections above and
-follow the two-step update. Anything about the user that fits no field (work
+follow the update steps above. Anything about the user that fits no field (work
 authorization or visa status, availability to start, willingness to relocate or
 travel, driving licence, security clearance) goes in `facts`, one short
 sentence each, added to the existing facts; never put something there that fits
@@ -58,4 +58,4 @@ another field. For a resume:
 3. Compare with `get_career_profile` and show what would be added or replaced.
    Keep existing entries unless the resume clearly replaces them (a section
    replaces its whole list).
-4. Follow the two-step update above.
+4. Follow the update steps above.

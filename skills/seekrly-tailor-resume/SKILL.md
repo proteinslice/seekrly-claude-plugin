@@ -38,8 +38,8 @@ dates, degrees, numbers or skills - only use facts from Seekrly or from the user
    `create_resume` with `name` like "Backend Engineer - Stripe", the full
    `resumeData`, and a `template` (modern, classic, minimal, twocolumn, timeline;
    keep the source's template and `design` unless asked). Replacing an existing resume's content
-   uses `update_resume`, which is two-step: send the **complete** JSON Resume
-   document (not a diff), show the preview and confirm with the user.
+   uses `update_resume`, which saves right away: send the **complete** JSON Resume
+   document (not a diff), and confirm the change with the user first.
 5. Offer to link it to the application (`update_application` with `resumeId`) or to
    attach it to an outreach email (`seekrly-outreach`).
 
@@ -56,7 +56,7 @@ unclear) and ask them to confirm.
 ## Look and page fit
 
 Both `create_resume` and `update_resume` take an optional `design`; with
-`update_resume` only the fields you send change (two-step, like content).
+`update_resume` only the fields you send change (ask first, like content).
 
 - `fontSize`: `xxsmall`, `xsmall`, `small` (default), `medium`, `large`.
 - `margin` (page margins): `minimal`, `narrow`, `normal` (default).
@@ -76,10 +76,10 @@ it fit unless they ask.
   `makeDefault` - applies directly.
 - File: `download_resume` returns a link valid for 5 minutes; give it only to the
   user and fetch a new one if it expired.
-- Public link: `share_resume` with `visibility` `public` (two-step; explain who can
+- Public link: `share_resume` with `visibility` `public` (ask first; explain who can
   see it) or `private` (immediate). `get_resume` shows the current link, whether it's
   password-protected, and view/download stats.
 - Password-protected link: never ask for, suggest or handle a password. The user
   sets one in Seekrly on the Resumes page (the link is in the `share_resume`
   description). Making a password-protected resume public removes its password, so
-  say so before the two-step call.
+  say so before the call.

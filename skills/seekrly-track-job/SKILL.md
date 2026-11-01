@@ -83,19 +83,19 @@ company's id with `list_companies` (`query`) or `search_companies`.
   `locations` replace the whole list). Show before → after first. A company with
   `inDirectory: true` only takes a new name; for wrong details, offer
   `request_company_change` (say what's wrong, give the right values in `fields`;
-  two-step: show the preview, repeat with the token only after a clear yes).
+  show it to the user and send only after a clear yes).
 - **Directory**: `get_company` may return `directoryMatch` for an own company - offer
   `link_company_to_directory` with that id (its profile then comes from the directory;
   `directoryId: null` unlinks). To share an own company with other Seekrly users,
-  `suggest_company_for_directory` (two-step; only the public profile is shared, never
+  `suggest_company_for_directory` (ask first; only the public profile is shared, never
   the user's applications, people or notes, and Seekrly reviews it first).
 - **Saved twice under different names**: `find_duplicate_companies`, show the groups
   and ask which name to keep. Then `merge_companies` with `keepId` and `mergeIds`
-  (two-step: show the preview, repeat with the token only after a clear yes).
+  (show what will merge and call only after a clear yes).
   Applications, contacts and notes move to the kept company. If the user says a group
   is really different companies, `dismiss_duplicate_companies` so it isn't suggested
   again.
 - **Delete a company**: only one with no applications or contacts; otherwise offer to
-  merge it. `delete_company` is two-step and also deletes its notes.
+  merge it. `delete_company` also deletes its notes: ask first.
 - **Notes about a company** (culture, people, why the user is interested): `add_note`
   with `target: "company"`.
